@@ -51,31 +51,26 @@ namespace DatingApp.API.Controllers
             return Ok(usersToReturn);
         }
 
-        [HttpGet("{id}", Name = "GetReservation")]
-        public async Task<IActionResult> GetReservation(int id)
+        [HttpPost("Reservation")]
+        public async Task<IActionResult> Reservation(ReservationForCreationDto ReservationForCreationDto)
         {
-            var user = await _repo.GetUser(id);
+          //  ReservationForCreationDto.Adress = userForRegisterDto.Username.ToLower();
 
-            var userToReturn = _mapper.Map<UserForDetailedDto>(user);
+            var ReservationToCreate = _mapper.Map<Reservation>(ReservationForCreationDto);
 
-            return Ok(userToReturn);
-        }
+           // var createdReservation = await _repo.Register(userToCreate, userForRegisterDto.Password);
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateReservation(int id, UserForUpdateDto userForUpdateDto)
-        {
-            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                return Unauthorized();
 
-            var userFromRepo = await _repo.GetUser(id);
-
-            _mapper.Map(userForUpdateDto, userFromRepo);
+            _repo.Add<Reservation>(ReservationToCreate);
 
             if (await _repo.SaveAll())
-                return NoContent();
+                return Ok();
+            
+            return BadRequest("Failed to like user");
 
-            throw new Exception($"Updating user {id} failed on save");
+
         }
+  
 
     }
 }
