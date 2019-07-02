@@ -1,3 +1,25 @@
 <p>
-  bikes works!
+  L'atelier vélo sur votre route
+  Réparation à domicile ou dans nos ateliers mobiles
 </p>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <h2 class="text-center text-primary">register</h2>
+    <hr>
+  
+    <div class="form-group">
+        <input [ngClass]="{'is-invalid': registerForm.get('city').errors && registerForm.get('city').touched}" class="form-control"
+          placeholder="City" formControlName="city">
+        <div class="invalid-feedback" *ngIf="registerForm.get('city').touched && registerForm.get('city').hasError('required')">City is required</div>
+      </div>
+  
+      <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('dateBooked').errors && registerForm.get('dateBooked').touched}" class="form-control"
+            placeholder="Date of reparation" formControlName="dateBooked" type="text" bsDatepicker [bsConfig]="bsConfig">
+          <div class="invalid-feedback" *ngIf="registerForm.get('dateBooked').touched && registerForm.get('dateBooked').hasError('required')">Date of Birth is required</div>
+        </div>
+    <div class="form-group text-center">
+      <button class="btn btn-success" [disabled]="!registerForm.valid" type="submit">Register</button>
+    </div>
+    
+  </form>
+  
