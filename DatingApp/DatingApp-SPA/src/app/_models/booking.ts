@@ -1,9 +1,13 @@
-export interface Booking{
+export interface Booking {
     id: number;
-    adress: string;
-    description: string;
-    dateAdded: Date;
-    datebooked: Date;
-    reperationType: string;
-    reperationDetails: string;
+Adress: string;
+ ReparationDate: Date;
+ReparationTime: string;
+TypeOfreperation: string;
+TypeOfBike: string;
+TypeOfreperationDescription: string;
+FirstName: string;
+Lastname: string;
+Email: string;
+DateBookedSystem: string;
 }

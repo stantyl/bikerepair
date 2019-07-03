@@ -27,7 +27,7 @@ namespace DatingApp.API.Controllers
         }
 
      
-
+//http://localhost:5000/api/reservation/book
         [HttpPost("book")]
          [AllowAnonymous]
         public async Task<IActionResult> Reservation(ReservationForCreationDto ReservationForCreationDto)
@@ -57,7 +57,10 @@ try
         
     [AllowAnonymous]
     [HttpGet("res")]
-    //http://localhost:5000/api/reservation/res
+ // http://localhost:5000/api/reservation/book
+
+
+
         public IActionResult GetReservations()
         {
           //  ReservationForCreationDto.Adress = userForRegisterDto.Username.ToLower();

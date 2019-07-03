@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180716185023_AddedLikeEntity")]
-    partial class AddedLikeEntity
+    [Migration("20190703164926_reservationmodel")]
+    partial class reservationmodel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.1-rtm-30846");
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099");
 
             modelBuilder.Entity("DatingApp.API.Models.Like", b =>
                 {
@@ -53,6 +53,36 @@ namespace DatingApp.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Photos");
+                });
+
+            modelBuilder.Entity("DatingApp.API.Models.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Adress");
+
+                    b.Property<DateTime>("DateBookedSystem");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("Lastname");
+
+                    b.Property<DateTime>("ReparationDate");
+
+                    b.Property<string>("ReparationTime");
+
+                    b.Property<string>("TypeOfBike");
+
+                    b.Property<string>("TypeOfreperation");
+
+                    b.Property<string>("TypeOfreperationDescription");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.User", b =>

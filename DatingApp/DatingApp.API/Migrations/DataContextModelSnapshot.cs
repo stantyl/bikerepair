@@ -60,23 +60,23 @@ namespace DatingApp.API.Migrations
 
                     b.Property<string>("Adress");
 
-                    b.Property<string>("Currency");
+                    b.Property<DateTime>("DateBookedSystem");
 
-                    b.Property<DateTime>("DateBooked");
+                    b.Property<string>("Email");
 
-                    b.Property<decimal>("Price");
+                    b.Property<string>("FirstName");
 
-                    b.Property<DateTime>("ReparationDateTimeEnd");
+                    b.Property<string>("Lastname");
 
-                    b.Property<DateTime>("ReparationDateTimeStart");
+                    b.Property<DateTime>("ReparationDate");
 
-                    b.Property<string>("ReperationType");
+                    b.Property<string>("ReparationTime");
 
-                    b.Property<string>("ReperationTypeDescription");
+                    b.Property<string>("TypeOfBike");
 
-                    b.Property<DateTime>("TypeOfreperation");
+                    b.Property<string>("TypeOfreperation");
 
-                    b.Property<DateTime>("TypeOfreperationDescription");
+                    b.Property<string>("TypeOfreperationDescription");
 
                     b.HasKey("Id");
 

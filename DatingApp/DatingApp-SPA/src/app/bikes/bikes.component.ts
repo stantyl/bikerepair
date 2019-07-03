@@ -28,8 +28,18 @@ export class BikesComponent implements OnInit {
   }
   createRegisterForm() {
     this.registerForm = this.fb.group({
-      city: ['', Validators.required],
-      dateBooked: [null, Validators.required]
+  
+      Adress: ['', Validators.required],
+      ReparationDate: [null, Validators.required],
+     ReparationTime: ['', Validators.required],
+     TypeOfreperation: ['', Validators.required], 
+     TypeOfBike: ['', Validators.required],
+     TypeOfreperationDescription: ['', Validators.required],
+     FirstName: ['', Validators.required],
+     Lastname: ['', Validators.required],
+     Email: ['', Validators.required],
+     DateBookedSystem: ['', Validators.required]
+
     }
     );
 
