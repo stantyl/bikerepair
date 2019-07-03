@@ -35,19 +35,21 @@ namespace DatingApp.API.Controllers
          
 try
 {
-    var ReservationToCreate = _mapper.Map<Reservation>(ReservationForCreationDto);
 
-           _repo.Add<Reservation>(ReservationToCreate);
+   var ReservationToCreate = _mapper.Map<Reservation>(ReservationForCreationDto);
+//
+         _repo.Add<Reservation>(ReservationToCreate);
 
-           await _repo.SaveAll();
+          await _repo.SaveAll();
            
                 return Ok();
 }
-         catch
+         catch(Exception e)
          {
               
-            return BadRequest("Failed to like user");
+            return BadRequest("Failed to add reservation tr " + e.Message.ToString()  );
          }
+
 
 
         }

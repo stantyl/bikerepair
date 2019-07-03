@@ -3,8 +3,9 @@
     "",
     "\\DatingApp",
     "\\DatingApp\\DatingApp.API",
+    "\\DatingApp\\DatingApp.API\\Controllers",
     "\\DatingApp\\DatingApp.API\\Migrations"
   ],
-  "SelectedNode": "\\DatingApp\\DatingApp.API\\Migrations\\DataContextModelSnapshot.cs",
+  "SelectedNode": "\\DatingApp\\DatingApp.API\\Controllers\\ReservationController.cs",
   "PreviewInSolutionExplorer": false
 }
