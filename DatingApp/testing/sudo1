@@ -1,0 +1,143 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sudoku
+{
+    class testing
+    {
+
+
+        private static bool CheckRow(int[,] solvedBoard)
+        {
+            for (int y = 0; y < 9; y++)
+            {
+                List<int> rowValues = new List<int>();
+                for (int x = 0; x < 9; x++)
+                {
+                  
+                    int newValue = solvedBoard[x, y];
+                    if (rowValues.Contains(newValue))
+                    {
+                        return false;
+                    }
+                   
+                    rowValues.Add(newValue);
+                }
+            }
+            return true;
+        }
+
+        private static bool CheckCol(int[,] solvedBoard)
+        {
+            for (int x = 0; x < 9; x++)
+            {
+                List<int> columnValues = new List<int>();
+                for (int y = 0; y < 9; y++)
+                {
+                    // a cell's value has not occured before in the column
+                    int newValue = solvedBoard[x, y];
+
+                    if (columnValues.Contains(newValue))
+                    {
+                        return false;
+                    }
+
+                    columnValues.Add(newValue);
+                }
+
+            }
+            return true;
+
+        }
+
+        private static void TestValuesAreUniqueInNonstants(int[,] solvedBoard)
+        {
+            TestValuesAreUniqueInNonstant(solvedBoard, 0, 0);
+            TestValuesAreUniqueInNonstant(solvedBoard, 1, 0);
+            TestValuesAreUniqueInNonstant(solvedBoard, 2, 0);
+            TestValuesAreUniqueInNonstant(solvedBoard, 0, 1);
+            TestValuesAreUniqueInNonstant(solvedBoard, 1, 1);
+            TestValuesAreUniqueInNonstant(solvedBoard, 2, 1);
+            TestValuesAreUniqueInNonstant(solvedBoard, 0, 2);
+            TestValuesAreUniqueInNonstant(solvedBoard, 1, 2);
+            TestValuesAreUniqueInNonstant(solvedBoard, 2, 2);
+        }
+
+        private static bool TestValuesAreUniqueInNonstant(int[,] solvedBoard, int xOffset, int yOffset)
+        {
+            List<int> nonstantValues = new List<int>();
+            for (int x = 0; x < 3; x++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    // a cell's value has not occurend before in the column
+                    int newValue = solvedBoard[x + (xOffset * 3), y + (yOffset * 3)];
+
+                    if (nonstantValues.Contains(newValue))
+                    {
+                        return false;
+                    }
+  
+                    nonstantValues.Add(newValue);
+                }
+            }
+
+            return true;
+        }
+
+
+
+
+        //sanitary check
+        static bool checkIfitContains9n9Number(int[,] p)
+        {
+            try
+            {
+
+                int t = p.Length;
+                //9 x9
+                if (t == 81)
+                {
+
+                    int arr1 = p.GetLength(0);
+                    int arr2 = p.GetLength(1);
+                    if (arr1 == 9 && arr2 == 9)
+
+                        return true;
+
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+}

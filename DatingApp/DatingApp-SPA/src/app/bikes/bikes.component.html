@@ -20,6 +20,48 @@
             placeholder="Date of reparation" formControlName="ReparationDate" type="text" bsDatepicker [bsConfig]="bsConfig">
           <div class="invalid-feedback" *ngIf="registerForm.get('ReparationDate').touched && registerForm.get('ReparationDate').hasError('required')">Date of Birth is required</div>
         </div>
+
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('ReparationTime').errors && registerForm.get('ReparationTime').touched}" class="form-control"
+            placeholder="ReparationTime" formControlName="ReparationTime">
+          <div class="invalid-feedback" *ngIf="registerForm.get('ReparationTime').touched && registerForm.get('ReparationTime').hasError('required')">ReparationTime required</div>
+        </div>
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('TypeOfBike').errors && registerForm.get('TypeOfBike').touched}" class="form-control"
+            placeholder="TypeOfBike" formControlName="TypeOfBike">
+          <div class="invalid-feedback" *ngIf="registerForm.get('TypeOfBike').touched && registerForm.get('TypeOfBike').hasError('required')">TypeOfBike is required</div>
+        </div>
+
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('TypeOfreperation').errors && registerForm.get('TypeOfreperation').touched}" class="form-control"
+            placeholder="TypeOfreperation" formControlName="TypeOfreperation">
+          <div class="invalid-feedback" *ngIf="registerForm.get('TypeOfreperation').touched && registerForm.get('TypeOfreperation').hasError('required')">TypeOfBike is required</div>
+        </div>
+
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('TypeOfreperationDescription').errors && registerForm.get('TypeOfreperationDescription').touched}" class="form-control"
+            placeholder="TypeOfreperationDescription" formControlName="TypeOfreperationDescription">
+          <div class="invalid-feedback" *ngIf="registerForm.get('TypeOfreperationDescription').touched && registerForm.get('TypeOfreperationDescription').hasError('required')">TypeOfBike is required</div>
+        </div>
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('FirstName').errors && registerForm.get('FirstName').touched}" class="form-control"
+            placeholder="FirstName" formControlName="FirstName">
+          <div class="invalid-feedback" *ngIf="registerForm.get('FirstName').touched && registerForm.get('FirstName').hasError('required')">FirstName is required</div>
+        </div>
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('Lastname').errors && registerForm.get('Lastname').touched}" class="form-control"
+            placeholder="Lastname" formControlName="Lastname">
+          <div class="invalid-feedback" *ngIf="registerForm.get('Lastname').touched && registerForm.get('Lastname').hasError('required')">FirstName is required</div>
+        </div>
+
+        <div class="form-group">
+          <input [ngClass]="{'is-invalid': registerForm.get('Email').errors && registerForm.get('Email').touched}" class="form-control"
+            placeholder="Email" formControlName="Email">
+          <div class="invalid-feedback" *ngIf="registerForm.get('Email').touched && registerForm.get('Email').hasError('required')">Email required</div>
+        </div>
+
+
+  
     <div class="form-group text-center">
       <button class="btn btn-success" [disabled]="!registerForm.valid" type="submit">Register</button>
     </div>

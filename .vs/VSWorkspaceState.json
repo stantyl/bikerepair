@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\DatingApp",
-    "\\DatingApp\\DatingApp-SPA\\src\\app",
-    "\\DatingApp\\DatingApp.API\\Migrations"
+    "\\DatingApp\\DatingApp-SPA"
   ],
   "SelectedNode": "\\DatingApp\\DatingApp-SPA",
   "PreviewInSolutionExplorer": false
